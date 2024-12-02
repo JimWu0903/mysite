@@ -146,6 +146,10 @@ main > div {
   margin: 40px 16px;
 }
 
+main .test {
+  background-color: #B1F0F7;
+}
+
 input,
 textarea,
 select,
