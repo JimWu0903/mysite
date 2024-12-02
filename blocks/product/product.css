@@ -1,0 +1,86 @@
+/* 針對最外層的 div */
+.product.block > div {
+    display: flex;
+    gap: 2rem; /* 設定左右間距 */
+    align-items: start; /* 靠上對齊 */
+  }
+  
+  /* 圖片容器 */
+  .product.block > div > div:first-child {
+    flex: 0 0 auto; /* 不讓圖片伸縮 */
+    width: 355px; /* 或您想要的寬度 */
+  }
+  
+  /* 文字容器 */
+  .product.block > div > div:last-child {
+    position: relative;
+    flex: 1;
+    max-height: 250px; /* 確保有足夠空間顯示按鈕 */
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding-bottom: 50px; /* 增加padding確保有足夠空間 */
+  }
+  
+  /* 文字展開狀態 */
+.product.block > div > div:last-child.expanded {
+    max-height: none;
+}
+
+/* 漸層效果和按鈕定位 */
+.product.block > div > div:last-child:not(.expanded)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px; /* 增加漸層高度 */
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(255, 255, 255, 0.95) 40%,
+        white 70%
+    );
+    pointer-events: none;
+    z-index: 1;  /* 確保漸層在內容之上 */
+}
+
+/* 按鈕基本樣式 */
+.cus-btn.btn-sm {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 5px 15px;
+    border: 1px solid #007bff;
+    background-color: white;
+    color: #007bff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    z-index: 2; /* 確保按鈕在漸層效果上方 */
+}
+
+/* 展開按鈕位置 */
+#btnShowMoreDesc {
+    bottom: 0;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* 收合按鈕位置 */
+#btnShowLessDesc {
+    bottom: 0;
+    display: none;
+    margin-bottom: 5px;
+}
+
+/* 按鈕 hover 效果 */
+.cus-btn.btn-sm:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* FontAwesome 圖標間距 */
+.fa.pl-1 {
+    padding-left: 4px;
+}
