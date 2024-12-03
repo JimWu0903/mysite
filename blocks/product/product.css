@@ -1,47 +1,58 @@
 /* 針對最外層的 div */
-.product.block > div {
+.product.block>div {
     display: flex;
-    gap: 2rem; /* 設定左右間距 */
-    align-items: start; /* 靠上對齊 */
-  }
-  
-  /* 圖片容器 */
-  .product.block > div > div:first-child {
-    flex: 0 0 auto; /* 不讓圖片伸縮 */
-    width: 355px; /* 或您想要的寬度 */
-  }
-  
-  /* 需要漸層的文字容器 */
-  .product.block > div::nth-child(2) > div:last-child {
+    gap: 2rem;
+    /* 設定左右間距 */
+    align-items: start;
+    /* 靠上對齊 */
+}
+
+.product.block>div:first-child {
+    flex: 2;
+    /* 占用兩倍的空間 */
+}
+
+/* 圖片容器 */
+.product.block>div>div:first-child {
+    flex: 0 0 auto;
+    /* 不讓圖片伸縮 */
+    width: 355px;
+    /* 或您想要的寬度 */
+}
+
+/* 需要漸層的文字容器 */
+.product.block>div::nth-child(2)>div:last-child {
     position: relative;
     flex: 1;
-    max-height: 300px; /* 確保有足夠空間顯示按鈕 */
+    max-height: 300px;
+    /* 確保有足夠空間顯示按鈕 */
     overflow: hidden;
     transition: max-height 0.3s ease;
-    padding-bottom: 50px; /* 增加padding確保有足夠空間 */
-  }
-  
-  /* 文字展開狀態 */
-.product.block > div > div:last-child.expanded {
+    padding-bottom: 50px;
+    /* 增加padding確保有足夠空間 */
+}
+
+/* 文字展開狀態 */
+.product.block>div>div:last-child.expanded {
     max-height: none;
 }
 
 /* 漸層效果和按鈕定位 */
-.product.block > div > div:last-child:not(.expanded)::after {
+.product.block>div>div:last-child:not(.expanded)::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 120px; /* 增加漸層高度 */
-    background: linear-gradient(
-        to bottom,
-        transparent 0%,
-        rgba(255, 255, 255, 0.95) 40%,
-        white 70%
-    );
+    height: 120px;
+    /* 增加漸層高度 */
+    background: linear-gradient(to bottom,
+            transparent 0%,
+            rgba(255, 255, 255, 0.95) 40%,
+            white 70%);
     pointer-events: none;
-    z-index: 1;  /* 確保漸層在內容之上 */
+    z-index: 1;
+    /* 確保漸層在內容之上 */
 }
 
 /* 按鈕基本樣式 */
@@ -57,7 +68,8 @@
     cursor: pointer;
     font-size: 14px;
     transition: all 0.2s ease;
-    z-index: 2; /* 確保按鈕在漸層效果上方 */
+    z-index: 2;
+    /* 確保按鈕在漸層效果上方 */
 }
 
 /* 展開按鈕位置 */
