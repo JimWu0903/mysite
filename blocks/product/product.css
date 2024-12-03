@@ -15,7 +15,7 @@
   .product.block > div > div:last-child {
     position: relative;
     flex: 1;
-    max-height: 250px; /* 確保有足夠空間顯示按鈕 */
+    max-height: 300px; /* 確保有足夠空間顯示按鈕 */
     overflow: hidden;
     transition: max-height 0.3s ease;
     padding-bottom: 50px; /* 增加padding確保有足夠空間 */

@@ -1,0 +1,48 @@
+/* 主容器佈局 */
+.spec.block > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  /* 左側表格樣式 */
+  .spec.block .spec-table-column table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .spec.block .spec-table-column th,
+  .spec.block .spec-table-column td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .spec.block .spec-table-column th {
+    background-color: #f8f8f8;
+    font-weight: bold;
+  }
+  
+  /* 右側列表樣式 */
+  .spec.block ul {
+    list-style: disc;
+    padding-left: 20px;
+  }
+  
+  .spec.block li {
+    margin-bottom: 5px;
+  }
+  
+  /* 響應式樣式 */
+  @media (max-width: 768px) {
+    .spec.block > div {
+      flex-direction: column;
+    }
+  
+    .spec.block .spec-table-column,
+    .spec.block .spec-list-column {
+      width: 100%;
+    }
+  }
+  
