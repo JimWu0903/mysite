@@ -9,7 +9,7 @@ export default async function decorateBlock(block) {
     console.log("current path: ", currentPath);
 
     // 構造 placeholders.json 的 URL
-    const placeholdersUrl = `${currentPath}${locale}/placeholders.json`;
+    const placeholdersUrl = `${currentPath}$placeholders.json`;
     console.log("placeholder url: ", placeholdersUrl);
 
     try {
