@@ -35,12 +35,12 @@ export default async function decorateBlock(block) {
 
         // 替換內容區塊
 
-        // 替換第一個 <section> 內唯一的 <p>
-        const firstSectionP = block.querySelector('section div p');
-        console.log("First section <p>: ", firstSectionP);
-        if (firstSectionP && placeholders.feature) {
+        // 替換第一個 <section> 內唯一的 <h4>
+        const firstSectionH4 = block.querySelector('section div h4');
+        console.log("First section <h4>: ", firstSectionH4);
+        if (firstSectionH4 && placeholders.feature) {
             console.log("Replacing content of first <p> with: ", placeholders.feature);
-            firstSectionP.textContent = placeholders.feature;
+            firstSectionH4.textContent = placeholders.feature;
         }
 
         // 替換 class="info" div 下 last-child div 的內容
