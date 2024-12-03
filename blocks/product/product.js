@@ -35,12 +35,23 @@ export default async function decorateBlock(block) {
 
         // 替換內容區塊
 
-        // 替換第一個 <section> 內唯一的 <h4>
-        const firstSectionH4 = block.querySelector('.section .default-content-wrapper > h4');
-        console.log("First section <h4>: ", firstSectionH4);
-        if (firstSectionH4 && placeholders.feature) {
-            console.log("Replacing content of first <h4> with: ", placeholders.feature);
-            firstSectionH4.textContent = placeholders.feature;
+        // 確保選取正確的 section
+        const sections = block.querySelectorAll('.section');
+        console.log("All sections: ", sections);
+        const targetSection = sections.length > 0 ? sections[0] : null;
+        console.log("Target section: ", targetSection);
+
+        if (targetSection) {
+            const firstSectionH4 = targetSection.querySelector('.default-content-wrapper h4');
+            console.log("First section <h4>: ", firstSectionH4);
+            if (firstSectionH4 && placeholders.feature) {
+                console.log("Replacing content of first <h4> with: ", placeholders.feature);
+                firstSectionH4.textContent = placeholders.feature;
+            } else {
+                console.warn("No <h4> found or placeholders.feature is undefined.");
+            }
+        } else {
+            console.warn("No target section found.");
         }
 
         // 替換 class="info" div 下 last-child div 的內容
