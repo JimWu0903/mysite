@@ -102,7 +102,7 @@
     margin-top: 2rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    gap: 2rem;
     width: 90%;
 }
 
@@ -110,7 +110,8 @@
 .spec.block > div:first-child {
     grid-column: 1 / 3;  
     grid-row: 1;        
-    display: flex;          
+    display: flex;    
+    gap: 4rem;      
 }
 
 /* ROW 1 LEFT */
@@ -127,7 +128,8 @@
 .spec.block>div:last-child {
     grid-column: 1 / 3;  
     grid-row: 2;        
-    display: flex;                
+    display: flex;  
+    gap: 4rem;                 
 }
 
 /* ROW 1 LEFT */
