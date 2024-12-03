@@ -11,8 +11,8 @@
     width: 355px; /* 或您想要的寬度 */
   }
   
-  /* 文字容器 */
-  .product.block > div > div:last-child {
+  /* 需要漸層的文字容器 */
+  .product.block > div::nth-child(2) > div:last-child {
     position: relative;
     flex: 1;
     max-height: 300px; /* 確保有足夠空間顯示按鈕 */
